@@ -116,7 +116,7 @@ function addBotMessage(message) {
   responseBubble.className = "flex gap-x-2 sm:gap-x-4";
   responseBubble.innerHTML = `
       <span class="inline-flex justify-center items-center w-[38px] h-[38px] rounded-md bg-[#63bda4] overflow-hidden">
-        <img src="./static/PageOff/assets/images/beemo-face2.jpg" alt="" class="object-contain w-full h-full" />
+        <img src="./static/images/beemo-face2.jpg" alt="" class="object-contain w-full h-full" />
       </span>
       <div class="grow max-w-[90%] md:max-w-2xl w-full space-y-3">
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3 white:bg-neutral-900 white:border-neutral-700">
@@ -150,7 +150,7 @@ function addLoadingBubble() {
   loadingBubble.className = "flex gap-x-2 sm:gap-x-4";
   loadingBubble.innerHTML = `
       <span class="inline-flex justify-center items-center w-[38px] h-[38px] rounded-md bg-[#63bda4] overflow-hidden">
-        <img src="./static/PageOff/assets/images/beemo-face2.jpg" alt="" class="object-contain w-full h-full" />
+        <img src="./static/images/beemo-face2.jpg" alt="" class="object-contain w-full h-full" />
       </span>
       <div class="bg-white border border-gray-200 rounded-lg p-4 space-y-3 white:bg-neutral-900">
         <p class="text-sm text-gray-800 ">Beemo is typing...</p>
