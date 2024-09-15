@@ -1,0 +1,331 @@
+{% extends "siderbar.html" %}
+{% block title %} Beemo The Chatbot
+{% endblock %}
+{% block header %}
+
+    {% include 'navbar.html' %} {% endblock %}
+{% block body %}
+
+
+<!-- Content -->
+<div class="relative h-screen">
+  <div class="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Title -->
+    <div class="text-center">
+      <a
+        class="inline-block mb-4 flex-none focus:outline-none focus:opacity-80"
+        href="{{ url_for('index') }}"
+        aria-label="Preline"
+      >
+        <img
+          class="h-20 w-auto"
+          src="https://s-media-cache-ak0.pinimg.com/originals/91/b9/f9/91b9f980088e8a98b4060d362e962a74.gif"
+        />
+      </a>
+
+
+
+    </div>
+    <!-- End Title -->
+
+    <ul id="chat-bubbles" class="mt-16 space-y-5 overflow-y-auto">
+      <!-- Chat Bubble -->
+      <li class="flex gap-x-2 sm:gap-x-4">
+        <span
+          class="inline-flex justify-center items-center w-[38px] h-[38px] rounded-md bg-[#63bda4] overflow-hidden"
+        >
+          <img
+            src="{{ url_for('static', filename='PageOff/assets/images/beemo-face2.jpg') }}"
+            alt=""
+            class="object-contain w-full h-full"
+          />
+        </span>
+
+        <!-- Card -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
+  <h2 class="font-medium text-gray-800">How can we help?</h2>
+  <div class="space-y-1.5">
+    <p class="mb-1.5 text-sm text-gray-700">
+      Hi there! 🌟 I'm Beemo, your new friend who loves to chat and help. I'm here just for you!
+      You can ask me anything or tell me how you're feeling today. What would you like to do together?
+    </p>
+  </div>
+</div>
+
+        <!-- End Card -->
+      </li>
+      <!-- End Chat Bubble -->
+    </ul>
+  </div>
+
+  <div
+    class="max-w-4xl mx-auto sticky bottom-0 z-10 bg-white border-t border-gray-200 pt-2 pb-4 sm:pt-4 sm:pb-6 px-4 sm:px-6 lg:px-0"
+  >
+    <!-- Textarea -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center mb-3">
+        <button
+          id="new-chat"
+          type="button"
+          class="inline-flex justify-center items-center gap-x-2 rounded-lg font-medium text-gray-800 hover:text-blue-600 focus:outline-none focus:text-blue-600 text-xs sm:text-sm"
+        >
+          <svg
+            class="shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14" />
+            <path d="M12 5v14" />
+          </svg>
+          New chat
+        </button>
+      </div>
+
+      <!-- Input -->
+      <form id="chat-form" class="relative">
+        <textarea
+          id="user-input"
+          class="p-4 pb-12 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+          placeholder="Ask me anything..."
+        ></textarea>
+
+        <!-- Toolbar -->
+        <div class="absolute bottom-px inset-x-px p-2 rounded-b-lg bg-white">
+          <div class="flex justify-end items-center">
+            <!-- Button Group -->
+            <div class="flex items-center gap-x-1">
+              <!-- Mic Button -->
+              <!-- Mic Button -->
+<button
+  type="button"
+  id="mic-button"
+  class="inline-flex shrink-0 justify-center items-center size-8 rounded-lg text-gray-500 hover:bg-gray-100 focus:z-10 focus:outline-none focus:bg-gray-100"
+>
+  <svg
+    class="shrink-0 size-4"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+    <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+    <line x1="12" x2="12" y1="19" y2="22" />
+  </svg>
+</button>
+<!-- End Mic Button -->
+
+              <!-- End Mic Button -->
+
+              <!-- Send Button -->
+              <button
+                id="send-message"
+                type="submit"
+                class="inline-flex shrink-0 justify-center items-center size-8 rounded-lg text-white bg-blue-600 hover:bg-blue-500 focus:z-10 focus:outline-none focus:bg-blue-500"
+              >
+                <svg
+                  class="shrink-0 size-3.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"
+                  />
+                </svg>
+              </button>
+              <!-- End Send Button -->
+            </div>
+            <!-- End Button Group -->
+          </div>
+        </div>
+        <!-- End Toolbar -->
+      </form>
+      <!-- End Input -->
+    </div>
+    <!-- End Textarea -->
+  </div>
+</div>
+<!-- End Content -->
+<script src="/static/js/chatbot.js"></script>
+<script>
+  // Show the modal on page load
+  window.addEventListener("load", function () {
+    const modal = document.getElementById("camera-modal");
+    modal.classList.remove("hidden");
+  });
+
+  // Handle camera permission
+  document
+    .getElementById("allow-camera")
+    .addEventListener("click", function () {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(function (stream) {
+          // Camera permission granted, do something with the stream
+          console.log("Camera permission granted");
+          document.getElementById("camera-modal").classList.add("hidden");
+          // You can add your UI enhancement logic here
+        })
+        .catch(function (err) {
+          // Camera permission denied
+          console.error("Camera permission denied", err);
+          alert("Camera access is required to enhance the UI.");
+        });
+    });
+</script>
+<script>
+  const openModalButton = document.getElementById("open-modal");
+  const modal = document.getElementById("new-modal");
+  const closeModalButton = document.getElementById("close-modal");
+
+  openModalButton.addEventListener("click", function () {
+    modal.classList.remove("hidden");
+  });
+
+  closeModalButton.addEventListener("click", function () {
+    modal.classList.add("hidden");
+  });
+</script>
+
+<script>
+  document.getElementById('mic-button').addEventListener('click', async () => {
+    try {
+      // Use the Web Audio API to record audio
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      const chunks = [];
+
+      mediaRecorder.ondataavailable = (event) => chunks.push(event.data);
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(chunks, { type: 'audio/m4a' });
+        const formData = new FormData();
+        formData.append('audio', audioBlob, 'recorded_audio.m4a');
+
+        // Send the audio file to the Flask server for transcription
+        const response = await fetch('/transcribe_audio', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+        if (result.transcription) {
+          // Send the transcription to the LLM endpoint
+          const llmResponse = await fetch('/get_response', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: result.transcription }),
+          });
+
+          const llmResult = await llmResponse.json();
+          // Handle the LLM response (e.g., display it on the page)
+          console.log('LLM Response:', llmResult.response);
+        }
+      };
+
+      mediaRecorder.start();
+      setTimeout(() => mediaRecorder.stop(), 5000); // Record for 5 seconds
+    } catch (err) {
+      console.error('Error accessing microphone', err);
+    }
+  });
+</script>
+
+<script src="/static/js/chatbot2.js"></script>
+<script>
+  // Show the modal on page load
+  window.addEventListener("load", function () {
+    const modal = document.getElementById("camera-modal");
+    modal.classList.remove("hidden");
+  });
+
+  // Handle camera permission
+  document
+    .getElementById("allow-camera")
+    .addEventListener("click", function () {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(function (stream) {
+          // Camera permission granted, do something with the stream
+          console.log("Camera permission granted");
+          document.getElementById("camera-modal").classList.add("hidden");
+          // You can add your UI enhancement logic here
+        })
+        .catch(function (err) {
+          // Camera permission denied
+          console.error("Camera permission denied", err);
+          alert("Camera access is required to enhance the UI.");
+        });
+    });
+</script>
+<script>
+  const openModalButton = document.getElementById("open-modal");
+  const modal = document.getElementById("new-modal");
+  const closeModalButton = document.getElementById("close-modal");
+
+  openModalButton.addEventListener("click", function () {
+    modal.classList.remove("hidden");
+  });
+
+  closeModalButton.addEventListener("click", function () {
+    modal.classList.add("hidden");
+  });
+</script>
+
+<script>
+  document.getElementById('mic-button').addEventListener('click', async () => {
+    try {
+      // Use the Web Audio API to record audio
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      const chunks = [];
+
+      mediaRecorder.ondataavailable = (event) => chunks.push(event.data);
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(chunks, { type: 'audio/m4a' });
+        const formData = new FormData();
+        formData.append('audio', audioBlob, 'recorded_audio.m4a');
+
+        // Send the audio file to the Flask server for transcription
+        const response = await fetch('/transcribe_audio', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+        if (result.transcription) {
+          // Send the transcription to the LLM endpoint
+          const llmResponse = await fetch('/get_response', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: result.transcription }),
+          });
+
+          const llmResult = await llmResponse.json();
+          // Handle the LLM response (e.g., display it on the page)
+          console.log('LLM Response:', llmResult.response);
+        }
+      };
+
+      mediaRecorder.start();
+      setTimeout(() => mediaRecorder.stop(), 5000); // Record for 5 seconds
+    } catch (err) {
+      console.error('Error accessing microphone', err);
+    }
+  });
+</script>
+{% endblock %}

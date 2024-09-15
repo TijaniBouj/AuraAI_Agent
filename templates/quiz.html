@@ -1,0 +1,189 @@
+{% extends 'siderbar.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="device">
+    <div class="status">
+        <h1 class="title">Emotions Quiz</h1>
+        <div class="status-bar">
+            <span />
+        </div>
+    </div>
+
+    <!-- Card gradient backgrounds -->
+    <div class="bg-card bg-card--01"></div>
+    <div class="bg-card bg-card--02"></div>
+    <div class="bg-card bg-card--03"></div>
+    <div class="bg-card bg-card--04"></div>
+    <div class="bg-card bg-card--05"></div>
+
+    <!-- Background decorations -->
+    <div class="bg-wrapper">
+        <div class="bg bg--alt-01"></div>
+        <div class="bg bg--alt-02"></div>
+        <div class="bg bg--alt-03"></div>
+    </div>
+
+    <!-- Intro -->
+    <div class="intro">
+        <div class="intro-panel">
+            <div class="intro-panel-images">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="intro-panel-text">
+                <h2>Ready to play?</h2>
+                <p>Look at the images and choose the correct emotion.</p>
+                <input type="checkbox" class="intro-done" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-image">
+      <img src="{{ url_for('static', filename='images/happykid.jpg') }}" class="cover-image" />
+                </div>
+                <div class="card-details">
+                    <div class="card-question-number">1</div>
+                    <h3>What emotion is the child showing?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="question-01" class="option answer" /> Happy
+                        </label>
+                        <label>
+                            <input type="radio" name="question-01" class="option" /> Sad
+                        </label>
+                        <label>
+                            <input type="radio" name="question-01" class="option" /> Angry
+                        </label>
+                    </div>
+                    <br />
+                    <input type="checkbox" class="submit" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar structure for other questions with different images and emotions -->
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-image">
+                <img src="{{ url_for('static', filename='images/sadkid.jpg') }}" class="cover-image" />
+                </div>
+                <div class="card-details">
+                    <div class="card-question-number">2</div>
+                    <h3>What emotion is the child showing?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="question-02" class="option" /> Happy
+                        </label>
+                        <label>
+                            <input type="radio" name="question-02" class="option answer" /> Sad
+                        </label>
+                        <label>
+                            <input type="radio" name="question-02" class="option" /> Surprised
+                        </label>
+                    </div>
+                    <br />
+                    <input type="checkbox" class="submit" />
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-image">
+                <img src="{{ url_for('static', filename='images/surprisekid.jpg') }}" class="cover-image" />
+                </div>
+                <div class="card-details">
+                    <div class="card-question-number">3</div>
+                    <h3>What emotion is the child showing?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="question-03" class="option" /> Happy
+                        </label>
+                        <label>
+                            <input type="radio" name="question-03" class="option answer" /> Surprised
+                        </label>
+                        <label>
+                            <input type="radio" name="question-03" class="option" /> Angry
+                        </label>
+                    </div>
+                    <br />
+                    <input type="checkbox" class="submit" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-image">
+                <img src="{{ url_for('static', filename='images/angrykid.jpg') }}" class="cover-image" />
+                </div>
+                <div class="card-details">
+                    <div class="card-question-number">4</div>
+                    <h3>What emotion is the child showing?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="question-04" class="option" /> Sad
+                        </label>
+                        <label>
+                            <input type="radio" name="question-04" class="option " /> Surprised
+                        </label>
+                        <label>
+                            <input type="radio" name="question-04" class="option answer" /> Angry
+                        </label>
+                    </div>
+                    <br />
+                    <input type="checkbox" class="submit" />
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-image">
+                <img src="{{ url_for('static', filename='images/fearkid.jpg') }}" class="cover-image" />
+                </div>
+                <div class="card-details">
+                    <div class="card-question-number">5</div>
+                    <h3>What emotion is the child showing?</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="question-05" class="option answer" /> Fear
+                        </label>
+                        <label>
+                            <input type="radio" name="question-05" class="option " /> Happy
+                        </label>
+                        <label>
+                            <input type="radio" name="question-05" class="option " /> Disgust
+                        </label>
+                    </div>
+                    <br />
+                    <input type="checkbox" class="submit" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more emotion cards as needed -->
+
+        <!-- Summary -->
+        <div class="summary">
+            <div class="summary-panel">
+                <h2>Congrats 🥳</h2>
+                <p>You finished the Emotions Quiz with a score of <span class="points-inline"></span> / 5</p>
+                <div class="points-show"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

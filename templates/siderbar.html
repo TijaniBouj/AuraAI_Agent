@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block head %}
+
+    {% endblock %}
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/4d9bce4b44.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<div class="stars">
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="nav-bar">
+  <input id="nav-toggle" type="checkbox"/>
+  <div id="nav-header">
+    <a id="nav-title" href="{{ url_for('index') }}">KIDS <i class="fas fa-star"></i> ZONE</a>
+    <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+    <hr/>
+  </div>
+
+  <div id="nav-content">
+
+    <div class="nav-button"><i class="fas fa-robot"></i><span>
+      <a href="{{ url_for('chatbot') }}">Chat with Buddy Bot</a>
+    </span></div>
+
+    <div class="nav-button"><i class="fas fa-puzzle-piece"></i><span>
+      <a href="{{ url_for('GameSelectTest') }}">Fun Puzzles & Games</a>
+    </span></div>
+
+    <hr/>
+
+    <div class="nav-button"><i class="fas fa-brain"></i><span>
+      <a href="{{ url_for('quiz') }}">Test Your Knowledge!</a>
+    </span></div>
+
+    <div class="nav-button"><i class="fas fa-guitar"></i><span>
+      <a href="{{ url_for('Music') }}">Music Time</a>
+    </span></div>
+
+    <div class="nav-button"><i class="fas fa-trophy"></i><span>
+      <a href="{{ url_for('dashboard') }}">Your Achievements</a>
+    </span></div>
+
+    <div id="nav-content-highlight"></div>
+  </div>
+
+  <input id="nav-footer-toggle" type="checkbox"/>
+  <div id="nav-footer">
+    <div id="nav-footer-heading">
+      <div id="nav-footer-avatar">
+        <img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547" alt="Beemo Avatar"/>
+      </div>
+      <div id="nav-footer-titlebox">
+        <a id="nav-footer-title" href="https://codepen.io/uahnbu/pens/public" target="_blank">Beemo</a>
+        <span id="nav-footer-subtitle">Your Guide</span>
+      </div>
+      <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+    </div>
+    <div id="nav-footer-content">
+      <p>Hey there! I'm Beemo, your guide in this fun adventure. Let's explore and learn together!</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+    {% block body %}
+
+    {% endblock %}
+
+   <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+
+
+
+
+</body>
+</html>

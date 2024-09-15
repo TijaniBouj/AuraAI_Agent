@@ -1,0 +1,105 @@
+.main{
+	position: absolute;
+
+    top : 120px;
+  left : 400px;
+
+}
+
+h1{
+	position: absolute;
+	left: 180px;
+	letter-spacing: 5px;
+	text-shadow: 3px 3px 1px
+#c1bbbd;
+}
+
+.alert{
+	position: relative;
+	top: 250px;
+	left:270px;
+	width:130px;
+	height: 60px;
+	z-index: 1;
+	text-align: center;
+	visibility: hidden;
+	padding-top: 10px;
+}
+
+.pop-up{
+	visibility: visible;
+}
+
+svg{
+	position: relative;
+	top: -50px;
+	width: 1000px;
+	height: 1000px;
+}
+
+rect{
+	fill:#30a996;
+}
+
+.mid-rect{
+	fill: #10493e;
+}
+
+.shadow{
+	filter:url(#shadow);
+}
+
+.shadow-2{
+	filter:url(#shadow-2);
+}
+
+.spin {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: rotate-wheel 8s infinite linear;
+}
+
+@keyframes rotate-wheel{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.info{
+	position: relative;
+	top: -940px;
+	left: 100px;
+	width: 450px;
+	height: 10vh;
+	text-align: center;
+	font-size: 18px;
+}
+
+.buttons{
+ position: relative;
+ top: -650px;
+ left: 50px;
+
+}
+
+i{
+	color:#10493e;
+  font-size: 30px;
+
+}
+
+i.fa-music{
+font-size: 15px;
+}
+
+button{
+	width: 140px;
+	height: 50px;
+	border-radius: 10px;
+	outline: none;
+	box-shadow: 2px 2px 3px
+#8d8d8d inset;
+}

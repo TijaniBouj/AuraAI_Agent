@@ -1,0 +1,135 @@
+{% extends 'siderbar.html' %}
+
+{% block head %}
+<title>Task Master</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Music.css') }}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+{% endblock %}
+
+{% block body %}
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/4d9bce4b44.js" crossorigin="anonymous"></script>
+<div class="main">
+	<div class="alert"></div>
+	<svg viewbox="0 0 100 100">
+		<defs>
+			<filter id="shadow">
+				<feDropShadow dx="0" dy="-0.3" stdDeviation="0.2"/>
+			</filter>
+		</defs>
+		<defs>
+			<filter id="shadow-2">
+				<feDropShadow dx="0" dy="0" stdDeviation="0.3"/>
+			</filter>
+		</defs>
+
+		<path d="M5 10,
+						 Q5 8, 7 8,
+						 L60 8,
+						 Q62 8, 62 10,
+						 L62 45,
+						 Q62 47, 60 47,
+						 L7 47,
+						 Q5 47, 5 45
+						 L5 10" fill="#30a996"/>
+		<path d="M10 15,
+						 Q10 13, 12 13,
+						 L55 13,
+						 Q57 13, 57 15,
+						 L57 35,
+						 Q57 37, 55 37,
+						 L13 37,
+						 Q10 37, 10 35,
+						 L10 15" fill="#e3dcaa" class="shadow-2"/>
+		<path d="M15 47,
+						 L18 40,
+						 L50 40,
+						 L53 47,
+						 L15 47"
+					fill="#278775"
+					class="shadow"/>
+		<path d="M10 20,
+						 L57 20,
+						 L57 25,
+						 L10 25" fill="#df2a13"/>
+		<circle cx="8" cy="11" r="1" fill="#10493e"/>
+		<circle cx="59" cy="11" r="1"fill="#10493e"/>
+		<circle cx="8" cy="44" r="1" fill="#10493e"/>
+		<circle cx="59" cy="44" r="1" fill="#10493e"/>
+		<circle cx="23" cy="44" r="1" fill="#30a996"/>
+		<circle cx="45" cy="44" r="1" fill="#30a996"/>
+		 <rect x="28" y="42" rx="0" ry="0" width="1.5" height="1.5" />
+		<rect x="38" y="42" rx="0" ry="0" width="1.5" height="1.5"/>
+		<rect x="15" y="20" rx="6" width="37" height="12" class="mid-rect"/>
+		<rect x="27" y="24" width="13" height="6"/>
+
+	<!-- 	middle circles-->
+		<circle cx="21" cy="26" r="4.5" fill="#30a996"/>
+		<circle cx="46" cy="26" r="4.5" fill="#30a996"/>
+		<circle cx="21" cy="26" r="3.5" fill="#f6dfda"/>
+		<circle cx="46" cy="26" r="3.5" fill="#f6dfda"/>
+		<!-- 	animation will happen here -->
+		<g class="first-g">
+				<path d="M19 23,
+						 L23 29" stroke="#30a996"
+	stroke-width=".4" />
+		<path d="M23 23,
+						 L19 29" stroke="#30a996"
+	stroke-width=".4" />
+		<path d="M17 26,
+						 L25 26" stroke="#30a996"
+	stroke-width=".4" />
+
+		<circle cx="21" cy="26" r="2" fill="#f6dfda"/>
+		</g>
+		<g class="second-g">
+		<path d="M48 23,
+						 L44 29" stroke="#30a996"
+	stroke-width=".4" />
+		<path d="M44 23,
+						 L48 29" stroke="#30a996"
+	stroke-width=".4" />
+		<path d="M42 26,
+						 L50 26" stroke="#30a996"
+	stroke-width=".4" />
+		<circle cx="46" cy="26" r="2" fill="#f6dfda"/>
+		</g>
+
+	<!-- 	Lip -->
+		<path d="M5 45,
+						 L4 43,
+						 L4 35,
+						 L5 33" fill="#10493e" />
+		<path d="M62 45,
+						 L63 43,
+						 L63 35,
+						 L62 33" fill="#10493e" />
+
+	</svg>
+	<div class="info">
+		<p class="artist"></p>
+		<p class="song">
+
+		</p>
+	</div>
+	<div class="buttons">
+	<button class="previous">
+		<i class="fas fa-step-backward"></i>
+	</button>
+	<button class="play">
+		<i class="fas fa-play"></i>
+	</button>
+	<button class="pause">
+		<i class="fas fa-pause"></i>
+	</button>
+	<button class="next">
+		<i class="fas fa-step-forward"></i>
+	</button>
+</div>
+</div>
+
+
+    <script src="static/js/Music.js"></script>
+{% endblock %}

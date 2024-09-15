@@ -1,0 +1,31 @@
+{% extends 'siderbar.html' %}
+
+{% block head %}
+<title>Task Master</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/GameSelectTest.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="CardsBody">
+    <a href="{{ url_for('MemoryGame') }}" alt="Mythrill">
+  <div class="card">
+    <div class="wrapper">
+      <img src="{{ url_for('static', filename='images/memoryGameB.jpg') }}" class="cover-image" />
+    </div>
+  </div>
+</a>
+
+    <a href="{{ url_for('chess') }}" alt="Mythrill" >
+  <div class="card">
+    <div class="wrapper">
+      <img src="{{ url_for('static', filename='images/chessBack.jpg') }}" class="cover-image" />
+    </div>
+  </div>
+</a>
+
+
+
+     </div>
+{% endblock %}
